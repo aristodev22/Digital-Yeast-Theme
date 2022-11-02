@@ -1,2 +1,2 @@
 # Power-Design-Theme
-A custom WordPress for Power Design Technologies website.
+A custom WordPress theme for Power Design Technologies website.
