@@ -1,6 +1,389 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Rubik:wght@300;500;700&display=swap');
 
+
+/** CSS RESETS AND RESPONSIVE TYPOGRAPHY **/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
 
 body {
+    color: white;
+    font-family: Rubik, sans-serif;
+    font-weight: 300;
+    font-size: calc(1.7rem + 0.5vw);
+    /* Responsive font size*/
+    line-height: calc(2.55rem + 0.5vw);
+    /* Responsive line height */
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+    margin: calc(1rem + 2vw) 0;
+}
+
+h1 {
+    font-family: "Open Sans Condensed", sans-serif;
+    text-transform: uppercase;
+    font-size: calc(2.4rem + 1vw);
+    /* Responsive font size*/
+    line-height: calc(3.6rem + 0.5vw);
+    /* Responsive line height */
+}
+
+h2 {
+    font-size: calc(2.4rem + 1vw);
+    /* Responsive font size*/
+    line-height: calc(3.6rem + 0.5vw);
+    /* Responsive line height */
+}
+
+
+p {
+    margin: calc(1rem + 2vw) 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+/** UTILITY CLASSES **/
+/* Buttons */
+.btn {
+    background-color: rgb(153, 0, 51);
+    color: white;
+    text-transform: uppercase;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+.btn:hover {
+    background-color: white;
+    color: rgb(153, 0, 51);
+}
+
+
+.btn-white {
+    background-color: white;
+    color: rgb(153, 0, 51);
+}
+.btn-white:hover {
+    background-color: rgb(153, 0, 51);
+    color: white;
+}
+
+/* Widths and layouts */
+.container {
+    max-width: clamp(80%, 90% - 2vw, 90%);
+    margin: 0 auto;
+    height: 100%;
+}
+
+/* Flex-row */
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Flex-column */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/** HEADER **/
+
+header {
+    background-color: rgb(153, 0, 51);
+    background-image: url(./assets/img/showcase.jpg);
+    background-size: cover;
+    background-attachment: scroll;
+    height: 100vh;
+}
+
+
+@media only screen and (max-width: 320px) {
+    header {
+        height: 130vh;
+    }
+}
+
+/* Navigation */
+.navbar {
+    height: 9rem;
+    background-color: transparent;
+    border-bottom: solid 0.1rem white;
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+}
+
+.navbar.sticky {
+    height: 7rem;
+    background-color: white;
+    box-shadow: 0px 9px 20px 2px rgba(0,0,0,0.24);
+}
+
+.navbar .flex {
+    justify-content: space-between;
+}
+
+.logoarea .logo {
+    width: calc(12.1rem + 2vw);
+    /* Responsive logo size */
+}
+
+.nav-area.flex {
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav li {
+    padding: 1rem;
+    margin: 0 0.5rem;
+}
+
+.nav li a {
+    text-transform: uppercase;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.nav li a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+i {
+    color: white;
+    margin: 0 2rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#search-icon {
+    transform: rotateY(180deg);
+}
+
+#menu-icon {
+    align-self: center;
+}
+
+#menubtn {
+    padding: 0.6rem 1.2rem;
+}
+
+#menubtn:hover {
+    text-decoration: none;
+    opacity: 1;
+}
+
+
+/* Mobile navigation */
+@media only screen and (max-width: 980px) {
+    .nav {
+        display: none;
+    }
+    #search-icon {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 981px) {
+    #menu-icon, .mobilenav {
+        display: none;
+    }
+}
+
+.mobilenav {
+    background-color: white;
+    width: 90%;
+    max-height: 0;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: max-height ease-out 0.3s;
+}
+
+.border-top {
+    border-top: solid 2px rgb(153, 0, 51);
+}
+
+.mobilenav ul {
+    padding: calc(1rem + 0.5vw) 0;
+}
+
+.mobilenav li {
+    text-align: left;
+    padding: 1rem 2rem;
+    border-bottom: solid rgba(244, 244, 244, 0.8) 1px;
+    width: 90%;
+    margin: 0 auto;
+}
+.mobilenav li:hover {
+    background-color: rgba(244, 244, 244, 0.8);
+}
+
+.mobilenav li a {
+    color: rgb(153, 0, 51);
+    text-transform: uppercase;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 700;
+    font-size: calc(1.5rem + 0.1vw);
+    display: block;
+}
+
+.mobilenav li a:hover {
+    opacity: 0.8;
+}
+
+
+/* Showcase */
+.hero {
+    max-width: 80%;
+    padding: 0 4rem;
+    flex: 1 1 auto;
+}
+
+.hero .flex-column {
+    align-items: center;
+}
+
+@media screen and (max-width: 980px) {
+    .hero {
+        max-width: 100%;
+    }
+}
+
+.hero p {
+    font-size: calc(1.7rem + 0.5vw);
+    /* Responsive font size*/
+    line-height: calc(2.55rem + 0.5vw);
+    /* Responsive line height */
+}
+
+.hero .btn {
+    width: calc(16rem + 3vw);
+    font-size: calc(1.6rem + 0.5vw);
+    /* Responsive font size*/
+    margin: 2rem 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section {
+    padding: 10rem 2rem;
+    margin: 0 auto;
+}
+
+.services {
     background-color: tomato;
+}
+
+.portfolio {
+    background-color: yellow;
+}
+
+.pricing {
+    background-color: green;
+}
+
+.features {
+    background-color: darkred;
+}
+
+.blog {
+    background-color: white;
+}
+
+.faq {
+    background-color: blue;
+}
+
+.floaters {
+    display: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    height: 7rem;
+    background-color: darkred;
+    display: flex;
+}
+
+.subfooter {
+    text-align: center;
+    color: white;
+    margin: auto;
 }
