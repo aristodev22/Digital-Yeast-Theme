@@ -20,6 +20,7 @@ menuIcon.addEventListener("click", function () {
   }
 });
 
+
 // STICKY NAVBAR CUSTOMIZATION
 const navbar = document.getElementsByClassName("navbar")[0];
 const logo = document.getElementsByClassName("logo")[0];
@@ -54,6 +55,7 @@ function customizeSticky() {
   }
 }
 
+
 // BACK TO TOP BUTTON FUNCTION
 const backToTopBtn = document.getElementById("backtotop");
 
@@ -61,8 +63,8 @@ function backToTop() {
   const scrolledHeight = window.scrollY;
 
   if (scrolledHeight >= 800) {
-    backToTopBtn.style.bottom = "5rem";
-    backToTopBtn.style.right = "5rem";
+    backToTopBtn.style.bottom = "2rem";
+    backToTopBtn.style.right = "2rem";
   } else {
     backToTopBtn.style.bottom = "-10rem";
     backToTopBtn.style.right = "-10rem";
@@ -72,3 +74,38 @@ function backToTop() {
 backToTopBtn.addEventListener("click", function () {
   window.scrollBy(0, -window.pageYOffset);
 });
+
+
+// NAVBAR SEARCH FORM CONTROL
+const NavSearchForm = document.getElementById("search-form");
+const desktopNav = document.getElementsByClassName("nav")[0];
+
+searchIcon.addEventListener("click", toggleSearch);
+
+function toggleSearch() {
+  NavSearchFormTop = window.getComputedStyle(NavSearchForm).getPropertyValue('top');
+
+  if (NavSearchFormTop == "-100px") {
+    NavSearchForm.style.top = "0.4rem";
+    searchIcon.classList.remove("gg-search");
+    searchIcon.classList.add("gg-close");
+  } else {
+    NavSearchForm.style.top = "-10rem";
+    searchIcon.classList.remove("gg-close");
+    searchIcon.classList.add("gg-search");
+  }
+
+  if (!desktopNav.classList.contains("slide-down")) {
+    desktopNav.classList.add("slide-down");
+    desktopNav.style.opacity = "0";
+  } else {
+    function showNav() {
+      desktopNav.style.opacity = "1";
+    }
+    setTimeout(showNav, 200);
+    function slideUp() {
+      desktopNav.classList.remove("slide-down");
+    }
+    setTimeout(slideUp, 300);
+  }
+}
