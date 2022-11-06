@@ -27,12 +27,13 @@ const searchIcon = document.getElementById("search-icon");
 
 window.onscroll = function () {
   customizeSticky();
+  backToTop();
 };
 
 function customizeSticky() {
-  const top = window.scrollY;
+  const scrolledHeight = window.scrollY;
 
-  if (top >= 80) {
+  if (scrolledHeight >= 80) {
     navbar.classList.add("sticky");
     logo.src = "./assets/img/logo.png";
     menuIcon.style.color = "rgb(153, 0, 51)";
@@ -52,3 +53,22 @@ function customizeSticky() {
     }
   }
 }
+
+// BACK TO TOP BUTTON FUNCTION
+const backToTopBtn = document.getElementById("backtotop");
+
+function backToTop() {
+  const scrolledHeight = window.scrollY;
+
+  if (scrolledHeight >= 800) {
+    backToTopBtn.style.bottom = "5rem";
+    backToTopBtn.style.right = "5rem";
+  } else {
+    backToTopBtn.style.bottom = "-10rem";
+    backToTopBtn.style.right = "-10rem";
+  }
+}
+
+backToTopBtn.addEventListener("click", function () {
+  window.scrollBy(0, -window.pageYOffset);
+});

@@ -18,9 +18,9 @@ body {
     color: white;
     font-family: Rubik, sans-serif;
     font-weight: 300;
-    font-size: calc(1.7rem + 0.5vw);
+    font-size: calc(1.7rem + 0.25vw);
     /* Responsive font size*/
-    line-height: calc(2.55rem + 0.5vw);
+    line-height: calc(2.55rem + 0.25vw);
     /* Responsive line height */
     text-align: center;
 }
@@ -43,12 +43,32 @@ h1 {
 }
 
 h2 {
-    font-size: calc(2.4rem + 1vw);
+    font-size: calc(2rem + 0.5vw);
     /* Responsive font size*/
-    line-height: calc(3.6rem + 0.5vw);
+    line-height: calc(3rem + 0.5vw);
     /* Responsive line height */
 }
 
+h3 {
+    font-size: calc(1.9rem + 0.5vw);
+    /* Responsive font size*/
+    line-height: calc(2.85rem + 0.5vw);
+    /* Responsive line height */
+}
+
+h4 {
+    font-size: calc(1.8rem + 0.5vw);
+    /* Responsive font size*/
+    line-height: calc(2.7rem + 0.5vw);
+    /* Responsive line height */
+}
+
+h5, h6 {
+    font-size: calc(1.7rem + 0.5vw);
+    /* Responsive font size*/
+    line-height: calc(2.55rem + 0.5vw);
+    /* Responsive line height */
+}
 
 p {
     margin: calc(1rem + 2vw) 0;
@@ -193,7 +213,7 @@ header {
     text-decoration: underline;
 }
 
-i {
+.nav-area i {
     color: white;
     margin: 0 2rem;
     cursor: pointer;
@@ -332,7 +352,7 @@ i {
 
 
 section {
-    padding: 10rem 2rem;
+    padding: 5rem 2rem;
     margin: 0 auto;
 }
 
@@ -360,10 +380,27 @@ section {
     background-color: blue;
 }
 
-.floaters {
-    display: hidden;
+.backtotop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0px 9px 20px 2px rgba(0,0,0,0.24);
+    width: 5rem;
+    height: 5rem;
+    background-color: white;
+    color: rgb(153, 0, 51);
+    cursor: pointer;
+    transition: all ease-out 0.8s;
+    position: fixed;
+    bottom: -10rem;
+    right: -10rem;
 }
 
+.backtotop:hover {
+    color: white;
+    background-color: rgb(153, 0, 51);
+}
 
 
 
@@ -378,7 +415,7 @@ section {
 
 footer {
     height: 7rem;
-    background-color: darkred;
+    background-color:  rgb(153, 0, 51);
     display: flex;
 }
 
