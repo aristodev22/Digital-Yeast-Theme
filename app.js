@@ -58,16 +58,20 @@ function customizeSticky() {
 
 // BACK TO TOP BUTTON FUNCTION
 const backToTopBtn = document.getElementById("backtotop");
+let backToTopBtnRight = window.getComputedStyle(backToTopBtn).getPropertyValue('right');
 
 function backToTop() {
   const scrolledHeight = window.scrollY;
 
   if (scrolledHeight >= 800) {
-    backToTopBtn.style.bottom = "2rem";
-    backToTopBtn.style.right = "2rem";
+    backToTopBtn.style.bottom = "20px";
+    backToTopBtn.style.right = "20px";
   } else {
-    backToTopBtn.style.bottom = "-10rem";
-    backToTopBtn.style.right = "-10rem";
+    if (backToTopBtnRight == "20px" && backToTopBtn.style.bottom == "20px") {
+      backToTopBtn.style.right = "-100px";
+      setTimeout(() => {backToTopBtn.style.bottom = "-100px";}, 500);
+      setTimeout(() => {backToTopBtn.style.right = "20px";}, 600);
+    }
   }
 }
 
