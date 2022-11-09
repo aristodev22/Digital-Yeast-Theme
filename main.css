@@ -382,17 +382,106 @@ header {
 }
 
 section {
-    padding: 5rem 2rem;
+    padding: 4rem 2rem;
     margin: 0 auto;
 }
 
-.services {
-    background-color: tomato;
+section .section-heading {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    color:rgb(153, 0, 51);
 }
 
-section hr {
-    /* color: white; */
+section .section-heading::after {
+    content: '';
+    position: absolute;
+    align-self: flex-end;
+    border-bottom: solid 0.1rem rgb(153, 0, 51);
+    width: 40rem;
 }
+
+@media screen and (max-width: 500px) {
+    section .section-heading::after {
+        width: 60%;
+    }
+}
+
+.services .container.flex, .service-one.flex , .service-two.flex {
+    flex-wrap: wrap;
+}
+
+.service-one.flex {
+    border: solid rgb(153, 0, 51) 0.1rem;
+    border-radius: 1rem;
+}
+
+.service-two.flex {
+    border: solid rgb(0, 153, 102) 0.1rem;
+    border-radius: 1rem;
+}
+
+.services .container.flex {
+    gap: 3rem;
+}
+
+.services .card {
+    border-radius: 1rem;
+    box-shadow: 0px 9px 20px 2px rgba(0,0,0,0.24);
+    padding: 2rem;
+    width: 27rem;
+    height: auto;
+}
+
+@media screen and (max-width: 651px) {
+    .services .card  {
+        width: 100%;
+    }
+}
+
+.card.web-design {
+    background-color: rgb(153, 0, 51);
+}
+
+.card.branding {
+    background-color: rgb(0, 153, 102);
+}
+
+.card .gg-arrange-back, .card .gg-laptop {
+    --ggs: 5;
+    margin: 6rem auto;
+}
+
+.services .service-highlights {
+    padding: 2rem;
+    text-align: left;
+}
+
+.services .service-highlights li {    
+    padding: 1rem;
+    font-size: calc(1.4rem + 0.25vw);
+    gap: 0.5rem;
+    justify-content: flex-start;
+}
+
+.service-one .service-highlights {
+    color: rgb(153, 0, 51);
+}
+
+.service-two .service-highlights {
+    color: rgb(0, 153, 102);
+}
+
+
+
+
+
+
+
+
+
 
 .portfolio {
     background-color: yellow;
