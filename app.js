@@ -26,10 +26,14 @@ const navbar = document.getElementsByClassName("navbar")[0];
 const logo = document.getElementsByClassName("logo")[0];
 const searchIcon = document.getElementById("search-icon");
 
-window.onscroll = function () {
-  customizeSticky();
-  backToTop();
+window.onload = (event) => {
+  window.scrollBy(0, 1);
 };
+
+window.onscroll = function () {
+    customizeSticky();
+    backToTop();
+  };
 
 function customizeSticky() {
   const scrolledHeight = window.scrollY;
@@ -54,6 +58,7 @@ function customizeSticky() {
     }
   }
 }
+
 
 
 // BACK TO TOP BUTTON FUNCTION

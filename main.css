@@ -542,14 +542,25 @@ section .section-heading::after {
 
 .portfolio .portfolio-content {
     margin: 2rem auto;
+    position: relative;
+    animation: portfolio-animation;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in;
 }
 
+@keyframes portfolio-animation {
+    0% {opacity: 0; left: -2rem;}
+    25% {opacity: 0.25; left: -2rem;}
+    50% {opacity: 0.25; left: -1.5rem;}
+    75% {opacity: 0.75; left: -1rem;}
+    100% {opacity: 1; left: 0;}
+}
 
 @media screen and (min-width: 695px) {
     .portfolio .portfolio-content {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-around;
         gap: 5rem;
     }
 }
