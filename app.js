@@ -31,9 +31,9 @@ window.onload = (event) => {
 };
 
 window.onscroll = function () {
-    customizeSticky();
-    backToTop();
-  };
+  customizeSticky();
+  backToTop();
+};
 
 function customizeSticky() {
   const scrolledHeight = window.scrollY;
@@ -60,7 +60,6 @@ function customizeSticky() {
 }
 
 
-
 // BACK TO TOP BUTTON FUNCTION
 const backToTopBtn = document.getElementById("backtotop");
 let backToTopBtnRight = window.getComputedStyle(backToTopBtn).getPropertyValue('right');
@@ -74,8 +73,12 @@ function backToTop() {
   } else {
     if (backToTopBtnRight == "20px" && backToTopBtn.style.bottom == "20px") {
       backToTopBtn.style.right = "-100px";
-      setTimeout(() => {backToTopBtn.style.bottom = "-100px";}, 500);
-      setTimeout(() => {backToTopBtn.style.right = "20px";}, 600);
+      setTimeout(() => {
+        backToTopBtn.style.bottom = "-100px";
+      }, 500);
+      setTimeout(() => {
+        backToTopBtn.style.right = "20px";
+      }, 600);
     }
   }
 }
@@ -112,9 +115,56 @@ function toggleSearch() {
       desktopNav.style.opacity = "1";
     }
     setTimeout(showNav, 200);
+
     function slideUp() {
       desktopNav.classList.remove("slide-down");
     }
     setTimeout(slideUp, 300);
   }
 }
+
+
+// PORTFOLIO TAB FUNCTION
+const portfolioTabs = document.getElementsByClassName("portfolio-tab");
+const portfolioItems = document.getElementsByClassName("portfolio-item");
+const portfolioTop = document.getElementsByClassName("portfolio-top")[0];
+
+portfolioTabs[0].classList.add("current-item");
+
+portfolioTop.addEventListener('click', showTab);
+
+function showTab(event) {
+  event.target.classList.add("current-item");
+
+  for (let p = 0; p < portfolioTabs.length; p++) {
+    if (portfolioTabs[p] === event.target) {
+      continue;
+    } else {
+      portfolioTabs[p].classList.remove("current-item");
+    }
+  }
+
+  for (let q = 0; q < portfolioItems.length; q++) {
+    if (event.target.classList.contains("all-button")) {
+      portfolioItems[q].style.display = "flex";
+      portfolioItems[q].classList.add("animate-portfolio-item");
+    } else if (event.target.classList.contains("branding-button")) {
+      if (!portfolioItems[q].classList.contains("branding")) {
+        portfolioItems[q].style.display = "none";
+      } else {
+        portfolioItems[q].style.display = "flex";
+        portfolioItems[q].classList.add("animate-portfolio-item");
+      }
+    } else if (event.target.classList.contains("webdesign-button")) {
+      if (!portfolioItems[q].classList.contains("webdesign")) {
+        portfolioItems[q].style.display = "none";
+      } else {
+        portfolioItems[q].style.display = "flex";
+        portfolioItems[q].classList.add("animate-portfolio-item");
+      }
+    }
+  }
+}
+
+
+// PORTFOLIO PAGINATION FUNCTION

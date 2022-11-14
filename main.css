@@ -540,6 +540,10 @@ section .section-heading::after {
     background-color: rgb(249, 249, 249);
 }
 
+.current-item {
+    background-color: rgb(249, 249, 249);
+}
+
 .portfolio .portfolio-content {
     margin: 2rem auto;
     position: relative;
@@ -556,20 +560,10 @@ section .section-heading::after {
     100% {opacity: 1; left: 0;}
 }
 
-@media screen and (min-width: 695px) {
-    .portfolio .portfolio-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        gap: 5rem;
-    }
-}
-
-@media screen and (max-width: 1041px) {
-    .portfolio .portfolio-content {
-        justify-content: space-around;
-        gap: 1rem;
-    }
+.animate-portfolio-item {
+    animation: portfolio-animation;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in;
 }
 
 .portfolio-content .portfolio-item {
@@ -582,6 +576,33 @@ section .section-heading::after {
 
 .portfolio-content .portfolio-item a {
     font-size: 1.4rem;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.1);
+}
+
+.portfolio-item:hover img {
+    border-radius: 0.5rem;
+}
+
+@media screen and (min-width: 695px) {
+    .portfolio .portfolio-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 5rem;
+    }
+    .portfolio-content .portfolio-item {
+        margin-bottom: 2rem;
+    }    
+}
+
+@media screen and (max-width: 1041px) {
+    .portfolio .portfolio-content {
+        justify-content: space-around;
+        gap: 1rem;
+    }
 }
 
 .portfolio .portfolio-bottom {
