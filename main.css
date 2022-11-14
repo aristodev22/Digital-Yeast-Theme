@@ -547,6 +547,9 @@ section .section-heading::after {
 .portfolio .portfolio-content {
     margin: 2rem auto;
     position: relative;
+}
+
+.animate-portfolio {
     animation: portfolio-animation;
     animation-duration: 0.8s;
     animation-timing-function: ease-in;
@@ -558,12 +561,6 @@ section .section-heading::after {
     50% {opacity: 0.25; left: -1.5rem;}
     75% {opacity: 0.75; left: -1rem;}
     100% {opacity: 1; left: 0;}
-}
-
-.animate-portfolio-item {
-    animation: portfolio-animation;
-    animation-duration: 0.8s;
-    animation-timing-function: ease-in;
 }
 
 .portfolio-content .portfolio-item {

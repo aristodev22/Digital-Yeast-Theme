@@ -126,6 +126,7 @@ function toggleSearch() {
 
 // PORTFOLIO TAB FUNCTION
 const portfolioTabs = document.getElementsByClassName("portfolio-tab");
+const portfolioContent = document.getElementsByClassName("portfolio-content")[0];
 const portfolioItems = document.getElementsByClassName("portfolio-item");
 const portfolioTop = document.getElementsByClassName("portfolio-top")[0];
 
@@ -147,23 +148,29 @@ function showTab(event) {
   for (let q = 0; q < portfolioItems.length; q++) {
     if (event.target.classList.contains("all-button")) {
       portfolioItems[q].style.display = "flex";
-      portfolioItems[q].classList.add("animate-portfolio-item");
+      rerunAnim();
     } else if (event.target.classList.contains("branding-button")) {
       if (!portfolioItems[q].classList.contains("branding")) {
         portfolioItems[q].style.display = "none";
       } else {
         portfolioItems[q].style.display = "flex";
-        portfolioItems[q].classList.add("animate-portfolio-item");
+        rerunAnim();
       }
     } else if (event.target.classList.contains("webdesign-button")) {
       if (!portfolioItems[q].classList.contains("webdesign")) {
         portfolioItems[q].style.display = "none";
       } else {
         portfolioItems[q].style.display = "flex";
-        portfolioItems[q].classList.add("animate-portfolio-item");
+        rerunAnim();
       }
     }
   }
+}
+
+function rerunAnim() {  
+  portfolioContent.classList.remove("animate-portfolio");
+  void portfolioContent.offsetWidth;
+  portfolioContent.classList.add("animate-portfolio");
 }
 
 
