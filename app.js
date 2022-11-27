@@ -44,8 +44,8 @@ function customizeSticky() {
     menuIcon.style.color = "rgb(153, 0, 51)";
     searchIcon.style.color = "rgb(153, 0, 51)";
     const navLinks = document.getElementsByClassName("nav-link");
-    for (let i = 0; i < navLinks.length; ++i) {
-      navLinks[i].style.color = "rgb(153, 0, 51)";
+    for (let a = 0; a < navLinks.length; a++) {
+      navLinks[a].style.color = "rgb(153, 0, 51)";
     }
   } else {
     navbar.classList.remove("sticky");
@@ -53,8 +53,8 @@ function customizeSticky() {
     menuIcon.style.color = "white";
     searchIcon.style.color = "white";
     const navLinks = document.getElementsByClassName("nav-link");
-    for (let i = 0; i < navLinks.length; ++i) {
-      navLinks[i].style.color = "white";
+    for (let b = 0; b < navLinks.length; b++) {
+      navLinks[b].style.color = "white";
     }
   }
 }
@@ -137,37 +137,39 @@ portfolioTop.addEventListener('click', showTab);
 function showTab(event) {
   event.target.classList.add("current-item");
 
-  for (let p = 0; p < portfolioTabs.length; p++) {
-    if (portfolioTabs[p] === event.target) {
+  for (let c = 0; c < portfolioTabs.length; c++) {
+    if (portfolioTabs[c] === event.target) {
+      hideUnnecc();
       continue;
     } else {
-      portfolioTabs[p].classList.remove("current-item");
+      portfolioTabs[c].classList.remove("current-item");
+      hideUnnecc();
     }
   }
 
-  for (let q = 0; q < portfolioItems.length; q++) {
+  for (let d = 0; d < portfolioItems.length; d++) {
     if (event.target.classList.contains("all-button")) {
-      portfolioItems[q].style.display = "flex";
+      portfolioItems[d].style.display = "flex";
       rerunAnim();
     } else if (event.target.classList.contains("branding-button")) {
-      if (!portfolioItems[q].classList.contains("branding")) {
-        portfolioItems[q].style.display = "none";
+      if (!portfolioItems[d].classList.contains("branding")) {
+        portfolioItems[d].style.display = "none";
       } else {
-        portfolioItems[q].style.display = "flex";
+        portfolioItems[d].style.display = "flex";
         rerunAnim();
       }
     } else if (event.target.classList.contains("webdesign-button")) {
-      if (!portfolioItems[q].classList.contains("webdesign")) {
-        portfolioItems[q].style.display = "none";
+      if (!portfolioItems[d].classList.contains("webdesign")) {
+        portfolioItems[d].style.display = "none";
       } else {
-        portfolioItems[q].style.display = "flex";
+        portfolioItems[d].style.display = "flex";
         rerunAnim();
       }
     }
   }
 }
 
-function rerunAnim() {  
+function rerunAnim() {
   portfolioContent.classList.remove("animate-portfolio");
   void portfolioContent.offsetWidth;
   portfolioContent.classList.add("animate-portfolio");
@@ -175,3 +177,95 @@ function rerunAnim() {
 
 
 // PORTFOLIO PAGINATION FUNCTION
+const portfolioItemsCount = portfolioItems.length;
+const portfolioPrev = document.getElementById("pagination-prev");
+const portfolioNext = document.getElementById("pagination-next");
+const numberOfPages = Math.ceil(portfolioItemsCount / 8);
+
+function createPagination(num) {
+  for (let e = 0; e < num; e++) {
+    let newPage = document.createElement("div");
+    newPage.textContent = e + 1;
+    newPage.classList.add("clickable-heading", "portfolio-nav");
+    portfolioNext.parentNode.insertBefore(newPage, portfolioNext);
+  }
+}
+createPagination(numberOfPages);
+
+const portfolioNav = document.getElementsByClassName("portfolio-nav");
+const portfolioBottom = document.getElementsByClassName("portfolio-bottom")[0];
+portfolioBottom.addEventListener('click', showPage);
+
+// Only show pagination if portfolio items are greater than 8
+function hideUnnecc() {
+  if (portfolioItems.length < 8) {
+    portfolioBottom.style.display = "none";
+  }
+}
+
+// Display first 8 portfolio items on initial page load
+window.onload = function () {
+  for (let f = 0; f < 8; f++) {
+    portfolioItems[f].style.display = "flex";
+  }
+  prevDisabled();
+  NextActive();
+  hideUnnecc();
+};
+
+function prevDisabled() {
+  portfolioPrev.style.opacity = "0.5";
+  portfolioPrev.style.cursor = "default";
+};
+
+function NextActive() {
+  portfolioNext.style.opacity = "1";
+  portfolioNext.style.cursor = "pointer";
+};
+
+function prevActive() {
+  portfolioPrev.style.opacity = "1";
+  portfolioPrev.style.cursor = "pointer";
+};
+
+function NextDisabled() {
+  portfolioNext.style.opacity = "0.5";
+  portfolioNext.style.cursor = "default";
+};
+
+function showPage(event) {
+  if ((event.target !== portfolioPrev) && (event.target !== portfolioNext)) {
+
+    if (event.target.classList.contains("portfolio-nav")) {
+      let pageNum = event.target.innerHTML;
+
+      function displayPortfolioItems() {
+        let currentPage = pageNum;
+        let pageSize = 8;
+        let pageStart = (currentPage - 1) * pageSize;
+        let pageEnd = currentPage * pageSize;
+        for (let g = 0; g < portfolioItems.length; g++) {
+          portfolioItems[g].style.display = "none";
+        }
+        for (let h = pageStart; h < pageEnd; h++) {
+          portfolioItems[h].style.display = "flex";
+        }
+      }
+      if (pageNum == 1) {
+        prevDisabled();
+        console.log("correct");
+      } else {
+        prevActive();
+        console.log("other");
+      };
+      displayPortfolioItems();
+    }
+  } else if (event.target === portfolioPrev) {
+    console.log("condition 1");
+
+  } else if (event.target === portfolioNext) {
+    console.log("condition 2");
+  }
+}
+
+

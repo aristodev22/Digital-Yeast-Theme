@@ -564,7 +564,7 @@ section .section-heading::after {
 }
 
 .portfolio-content .portfolio-item {
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 25.5rem;
     gap: 1rem;
