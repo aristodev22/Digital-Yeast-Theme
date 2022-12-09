@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Rubik:wght@300;500;700&display=swap');
 
-
 /** CSS RESETS AND RESPONSIVE TYPOGRAPHY **/
 
 * {
@@ -619,15 +618,92 @@ section .section-heading::after {
     width: 100%;
 }
 
-
-
-
-
-
-
 .pricing {
-    background-color: green;
+    background-color: #f7f8fa;
+    color: #333b40;
 }
+
+.pricing .container {
+    padding: 3rem;
+    margin: 5rem auto;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+@media screen and (max-width: 980px) {
+    .pricing .container {
+        display: block;
+    }   
+}
+
+.pricing .section-heading::after {
+    border-bottom: solid 0.1rem rgb(153, 0, 51);
+}
+
+.tiers {
+    flex: 1;
+    padding: 5rem 0.15rem;
+}
+
+.tiers:nth-child(2) {
+    background-color: white;
+    border: solid darkred 1px;
+}
+
+.tiers .clickable-heading {
+    color: darkred;
+    font-size: 102%;
+}
+
+.tier-price {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 7rem;
+    font-weight: 300;
+    padding: 3rem;
+}
+
+.tier-features {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tier-features li {
+    padding: 0.5rem;
+}
+
+.tier-features li:first-child {
+    padding-top: 2rem;
+}
+
+.tier-features::before {
+    content: '';
+    position: absolute;
+    justify-self: start;
+    border-bottom: solid 0.1rem rgb(153, 0, 51);
+    padding-top: .1rem;
+    width: 65%;
+}
+
+.tier-btn {
+    font-size: 102%;
+    padding: 1rem 2rem;
+    margin: 4rem;        
+}
+
+.tier-btn:hover {
+    letter-spacing: 0.1rem;
+}
+
+
+
+
+
+
+
+
+
 
 .features {
     background-color: darkred;
