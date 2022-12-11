@@ -571,7 +571,7 @@ section .section-heading::after {
 }
 
 .portfolio-content .portfolio-item a {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 .portfolio-item:hover {
@@ -687,7 +687,7 @@ section .section-heading::after {
 }
 
 .tier-btn {
-    font-size: 102%;
+    font-size: 101%;
     padding: 1rem 2rem;
     margin: 4rem;        
 }
@@ -696,18 +696,54 @@ section .section-heading::after {
     letter-spacing: 0.1rem;
 }
 
-
-
-
-
-
-
-
-
+.tiers:nth-child(2) .btn {
+    border: solid darkred 1px;
+}
 
 .features {
     background-color: darkred;
+    color: white;
 }
+
+.features .section-heading {
+    color: white;
+}
+
+.features .section-heading::after {
+    border-bottom: solid 0.1rem white;
+}
+
+.features .container {
+    flex-wrap: wrap;
+    width: 80%;
+    padding: 4rem 2rem;
+ }
+
+@media screen and (max-width: 651px) {
+    .features .container {
+        width: 100%;
+    }
+}
+
+.features  .feature-blurb {
+    flex: 1 1 30rem;
+    padding: 2rem 1rem;
+    gap: 200rem;
+    --ggs: 3;
+}
+
+.features  .feature-blurb i, p {
+    margin: 6rem auto;
+}
+
+
+
+
+
+
+
+
+
 
 .blog {
     background-color: white;
