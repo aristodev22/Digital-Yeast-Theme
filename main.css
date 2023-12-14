@@ -933,7 +933,6 @@ section .section-heading::after {
 
 .site-footer {
     background-color: rgb(153, 0, 51);
-    border: solid 3px black;
 }
 
 .footer {

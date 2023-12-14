@@ -40,7 +40,7 @@ function customizeSticky() {
 
   if (scrolledHeight >= 80) {
     navbar.classList.add("sticky");
-    logo.src = "./assets/img/logo.png";
+    logo.src = "./assets/img/logo.svg";
     menuIcon.style.color = "rgb(153, 0, 51)";
     searchIcon.style.color = "rgb(153, 0, 51)";
     const navLinks = document.getElementsByClassName("nav-link");
@@ -49,7 +49,7 @@ function customizeSticky() {
     }
   } else {
     navbar.classList.remove("sticky");
-    logo.src = "./assets/img/logo-white.png";
+    logo.src = "./assets/img/logo-white.svg";
     menuIcon.style.color = "white";
     searchIcon.style.color = "white";
     const navLinks = document.getElementsByClassName("nav-link");
