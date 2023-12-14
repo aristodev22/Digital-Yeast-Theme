@@ -269,3 +269,31 @@ function showPage(event) {
 }
 
 
+// FAQ ACCORDION
+const faqToggle = document.getElementsByClassName("question-div");
+
+for (let i = 0; i < faqToggle.length; i++) {
+  faqToggle[i].addEventListener("click", function (e) {
+
+    const faqToggleIcon = e.currentTarget.lastChild.previousElementSibling;    
+    if (faqToggleIcon.classList.contains("gg-add")) {
+      faqToggleIcon.classList.remove("gg-add");
+      faqToggleIcon.classList.add("gg-remove");
+    } else {
+      faqToggleIcon.classList.remove("gg-remove");
+      faqToggleIcon.classList.add("gg-add");
+    }
+  
+    const answerDiv = e.currentTarget.nextElementSibling;
+    // const answerParagraph = e.currentTarget.nextElementSibling.firstChild.nextElementSibling;
+    
+    if (answerDiv.style.maxHeight) {
+      answerDiv.style.maxHeight = null;
+      // answerParagraph.style.display = "none";
+    } else {
+      answerDiv.style.maxHeight = answerDiv.scrollHeight + 100 + "px";
+      // answerParagraph.style.display = "block";
+    }
+  });
+}
+
