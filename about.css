@@ -22,16 +22,10 @@ p {
     margin: 4rem;
 }
 
-.tech-we-use .top ul {
+.tech-we-use ul {
         display: flex;
         padding: 0;
         animation: cambio 25s infinite linear;
-}
-
-.tech-we-use .bottom ul {
-        display: flex;
-        padding: 0;
-        animation: spo 25s infinite linear;
 }
 
 .tech-we-use li {
@@ -49,9 +43,14 @@ p {
         to {margin-left: -100%}
 }
 
-@keyframes spo {
-    from {margin-left: 0%}
-    to {margin-left: 100%}
+@media screen and (max-width: 481px) {
+    .tech-we-use img {
+        width: 5rem;
+        height: auto !important;
+    }
+    .tech-we-use ul {
+        animation: cambio 15s infinite linear;
+    }
 }
 
 .contact-box h2, .tech-we-use h2 {
