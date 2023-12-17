@@ -1,0 +1,64 @@
+p {
+    padding: 0;
+    margin: 0;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.about-company, .contact-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem;
+}
+
+.tech-we-use {
+    margin: 10rem auto;
+    overflow: hidden;
+}
+
+.tech-we-use, .top, h4, .bottom {
+    margin: 4rem;
+}
+
+.tech-we-use .top ul {
+        display: flex;
+        padding: 0;
+        animation: cambio 25s infinite linear;
+}
+
+.tech-we-use .bottom ul {
+        display: flex;
+        padding: 0;
+        animation: spo 25s infinite linear;
+}
+
+.tech-we-use li {
+        padding:0 50px;
+        list-style: none;
+}
+
+.tech-we-use img {
+        width: 8rem;
+        height: auto !important;
+}
+
+@keyframes cambio {
+        from {margin-left: 0%}
+        to {margin-left: -100%}
+}
+
+@keyframes spo {
+    from {margin-left: 0%}
+    to {margin-left: 100%}
+}
+
+.contact-box h2, .tech-we-use h2 {
+    color: rgb(153,0,51);
+    font-weight: 700;
+    font-size: calc(2rem + 0.5vw);
+    line-height: calc(3rem + 0.5vw);
+    text-align: center;
+}
+
