@@ -1,2 +1,2 @@
-# Power-Design-Theme
-A custom WordPress theme for Power Design Technologies website.
+# Digital-Yeast-Theme
+A custom WordPress theme for Digital Yeast website.
