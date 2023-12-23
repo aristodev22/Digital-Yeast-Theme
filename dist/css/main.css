@@ -1,1 +1,113 @@
-/*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Rubik:wght@300;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: clamp(80%, 90% - 2vw, 90%);
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: 0.8rem 1.6rem;
+  background-color: rgb(153, 0, 51);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+.btn:hover {
+  background-color: #ffffff;
+  color: rgb(153, 0, 51);
+}
+.btn-white {
+  background-color: #ffffff;
+  color: rgb(153, 0, 51);
+}
+.btn-white:hover {
+  background-color: rgb(153, 0, 51);
+  color: #ffffff;
+}
+
+.clickable-heading {
+  text-transform: uppercase;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  color: rgb(51, 59, 64);
+  min-height: 100vh;
+  font-family: Rubik, sans-serif;
+  font-weight: 300;
+  font-size: calc(1.7rem + 0.25vw);
+  line-height: calc(2.55rem + 0.25vw);
+}
+
+input, select, textarea, button {
+  font-family: inherit;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+}
+
+h1 {
+  font-family: "Open Sans Condensed", sans-serif;
+  text-transform: uppercase;
+  font-size: calc(2.4rem + 1vw);
+  line-height: calc(3.6rem + 0.5vw);
+}
+
+h2 {
+  font-size: calc(2rem + 0.5vw);
+  line-height: calc(3rem + 0.5vw);
+}
+
+h3 {
+  font-size: calc(1.9rem + 0.5vw);
+  line-height: calc(2.85rem + 0.5vw);
+}
+
+h4 {
+  font-size: calc(1.8rem + 0.5vw);
+  line-height: calc(2.7rem + 0.5vw);
+}
+
+h5, h6 {
+  font-size: calc(1.7rem + 0.5vw);
+  line-height: calc(2.55rem + 0.5vw);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}/*# sourceMappingURL=main.css.map */

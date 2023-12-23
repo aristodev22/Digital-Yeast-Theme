@@ -1,0 +1,52 @@
+// Resets
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+// Color variables
+$primary-color: rgb(51, 59, 64);
+$secondary-color: rgb(153, 0, 51);
+$tertiary-color: rgb(0, 153, 102); 
+$white-color: rgb(255, 255, 255);
+
+
+// Font weights
+
+
+// Typography: Responsive font sizes and line heights
+
+
+// Paddings and margins
+
+
+// Box-shadows
+
+
+// Border-radii
+
+
+// Widths and layouts
+.container {
+    max-width: clamp(80%, 90% - 2vw, 90%);
+    margin: 0 auto;
+}
+
+@mixin flexCenter($direction, $gap) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+
+// Transitions
+@mixin transition-ease($duration) {
+    transform: all $duration ease-in-out;
+}
+
+
+// Media queries

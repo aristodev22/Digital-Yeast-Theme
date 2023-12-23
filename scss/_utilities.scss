@@ -1,0 +1,46 @@
+// Buttons 
+.btn {
+    display: inline-block;
+    width: auto;
+    margin: 0;  
+    padding: 0.8rem 1.6rem;
+    background-color: $secondary-color;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+        background-color: #ffffff;
+        color: $secondary-color;
+    }
+
+    &-white {
+        background-color: #ffffff;
+        color: $secondary-color;   
+
+        &:hover {
+        background-color: $secondary-color;
+        color: #ffffff;
+        }
+    }
+}
+
+
+// Clickable heading
+.clickable-heading {
+    text-transform: uppercase;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+
+// Cards
